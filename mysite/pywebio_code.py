@@ -5,7 +5,7 @@ from pywebio.session import download
 import time
 
 def bmi():
-  output.toast('Пожалуйста подождите 5 секунд...', duration=3, color='green')
+  output.toast('Пожалуйста подождите 5 секунд...', duration=5, color='green')
   time.sleep(5)
   try: 
     with open ('__foo.ob', 'rb') as fp:
@@ -16,4 +16,4 @@ def bmi():
       fp.write(content)
   except Exception as ex:
     output.put_text(ex)
-  output.put_button('Скачать файл', lambda: download(f'{random.randint(0, 9999999999)}.txt', content), position=output)
+  output.put_button('Скачать файл', lambda: download(f'{random.randint(0, 9999999999)}.txt', content))
