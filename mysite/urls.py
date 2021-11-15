@@ -21,6 +21,7 @@ from pywebio.platform.django import webio_view
 
 # `task_func` is PyWebIO task function
 webio_view_func = webio_view(pywebio_code.bmi)
+webio_view_func2 = webio_view(pywebio_code.MSM)
 urlpatterns = [
   path(r"tool", webio_view_func),
     path('admin/', admin.site.urls),
@@ -35,5 +36,6 @@ urlpatterns = [
     path('api_data/', views.api_data),
     path('gd/<str:name>', views.gd),
     path('gd/', views.gd),
+    path(r"minescale", webio_view_func2),
     path('', views.index)    
 ]
